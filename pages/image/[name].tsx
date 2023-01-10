@@ -2,7 +2,7 @@ import { getDownloadURL, ref } from "firebase/storage";
 import { useRouter } from "next/router";
 import { storage } from "../../lib/firebase";
 import { useEffect, useState } from "react";
-import Image from "next/image";
+import Loader from "../../components/Loader";
 
 function ImagePage() {
     const router = useRouter();
@@ -28,16 +28,25 @@ function ImagePage() {
     }, []);
 
     return (
-        <div>
-            {fileUrl && (
-                <div className="relative w-96 h-96 ">
-                    <Image
+        <div className="flex flex-col justify-center place-content-center items-center w-7/12 m-auto gap-36">
+            {fileUrl ? (
+                <>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
                         src={fileUrl}
                         alt="preview image"
-                        className="rounded"
-                        fill={true}
+                        className="object-scale-down object-center"
                     />
-                </div>
+                    <a
+                        href={fileUrl}
+                        download={true}
+                        className="bg-blue-400 hover:bg-blue-800 rounded px-4 py-2 text-center font-bold text-white w-2/5"
+                    >
+                        Download
+                    </a>
+                </>
+            ) : (
+                <Loader show />
             )}
         </div>
     );

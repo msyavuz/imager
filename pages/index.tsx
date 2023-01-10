@@ -40,12 +40,10 @@ export default function Home() {
             {loading ? (
                 <Loader show />
             ) : (
-                <div className="text-center h-screen grid place-content-center">
-                    <InputCard
-                        handleFileChange={handleFileChange}
-                        handleSubmitButton={handleSubmitButton}
-                    />
-                </div>
+                <InputCard
+                    handleFileChange={handleFileChange}
+                    handleSubmitButton={handleSubmitButton}
+                />
             )}
         </>
     );
