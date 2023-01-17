@@ -4,6 +4,7 @@ import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import InputCard from "../components/InputCard";
 import Loader from "../components/Loader";
 import { useRouter } from "next/router";
+import FileCard from "../components/FileCard";
 
 export default function Home() {
     const [file, setFile] = useState<File>();
@@ -40,10 +41,13 @@ export default function Home() {
             {loading ? (
                 <Loader show />
             ) : (
-                <InputCard
-                    handleFileChange={handleFileChange}
-                    handleSubmitButton={handleSubmitButton}
-                />
+                <>
+                    {file && <FileCard file={file} />}
+                    <InputCard
+                        handleFileChange={handleFileChange}
+                        handleSubmitButton={handleSubmitButton}
+                    />
+                </>
             )}
         </>
     );

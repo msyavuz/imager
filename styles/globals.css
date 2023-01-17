@@ -4,4 +4,5 @@
 
 #__next {
     @apply w-screen h-screen grid place-content-center;
+    @apply bg-black text-white;
 }

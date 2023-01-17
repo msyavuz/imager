@@ -35,7 +35,7 @@ function ImagePage() {
                     <img
                         src={fileUrl}
                         alt="preview image"
-                        className="object-scale-down object-center"
+                        className="object-scale-down object-center shadow"
                     />
                     <a
                         href={fileUrl}

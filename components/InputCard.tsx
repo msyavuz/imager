@@ -8,15 +8,7 @@ interface InputCardProps {
 function InputCard(props: InputCardProps) {
     return (
         <div className="inputCard w-96 h-96 flex flex-col place-content-center items-center gap-16">
-            {/* <input
-                type="file"
-                name="fileInput"
-                id="fileInput"
-                onChange={props.handleFileChange}
-                accept="image/*"
-                className=""
-            /> */}
-            <div className="border border-dashed border-gray-500 relative hover:bg-slate-300">
+            <div className="border border-dashed border-gray-500 relative hover:bg-slate-600 rounded">
                 <input
                     type="file"
                     multiple
