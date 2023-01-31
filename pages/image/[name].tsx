@@ -28,7 +28,7 @@ function ImagePage() {
     }, []);
 
     return (
-        <div className="flex flex-col justify-center place-content-center items-center w-7/12 m-auto gap-36">
+        <div className="m-auto flex w-7/12 flex-col place-content-center items-center justify-center gap-36">
             {fileUrl ? (
                 <>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -40,7 +40,7 @@ function ImagePage() {
                     <a
                         href={fileUrl}
                         download={true}
-                        className="bg-blue-400 hover:bg-blue-800 rounded px-4 py-2 text-center font-bold text-white w-2/5"
+                        className="w-2/5 rounded bg-blue-400 px-4 py-2 text-center font-bold text-white hover:bg-blue-800"
                     >
                         Download
                     </a>
